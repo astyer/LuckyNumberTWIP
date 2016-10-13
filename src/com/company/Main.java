@@ -10,23 +10,31 @@ public class Main {
         Scanner inputint = new Scanner(System.in);
         int choice = 2;
         int n = 0;
-        int g =0;
+        String[] nameList;
+        nameList = new String[50];
+        for(int i = 0; i < nameList.length; i++)
+        {
+            nameList[i] = "a";
+        }
+        int[] numberList;
+        numberList = new int[50];
 
         while(choice == 1 || choice == 2)
         {
-            String[] nameList = {"a", "b"};
-            int[] numberList = {0, 0, 0};
-
             if(choice == 1)
             {
-                /*for(int i = 0; i < nameList.length(); i++)
+                for(int i = 0; i < nameList.length; i++)
                 {
-                    System.out.println(nameList[i] + " ");
+                    int w = i+1;
+                    if(!nameList[i].equals("a"));
+                    System.out.println("Name " + w + ": " + nameList[i] + " ");
                 }
-                for(int d = 0; d < numberList.length(); d++)
+                for(int d = 0; d < numberList.length; d++)
                 {
-                    System.out.println(nameList[d] + " ");
-                }*/
+                    int q = d+1;
+                    if(numberList[d] != 0)
+                        System.out.println("Lucky Number " + q + ": " + numberList[d] + " ");
+                }
             }
 
             else
@@ -39,7 +47,7 @@ public class Main {
                 System.out.println(luckyNumber);
 
                 nameList[n] = name;
-                numberList[g] = luckyNumber;
+                numberList[n] = luckyNumber;
             }
 
             n++;
