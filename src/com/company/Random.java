@@ -2,10 +2,10 @@ package com.company;
 
 public class Random {
 
-    public Random(String a)
+    public Random()
     {
-
     }
+
 
     public int perfectRandom(int x)
     {

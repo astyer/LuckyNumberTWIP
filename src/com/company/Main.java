@@ -8,8 +8,10 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         Scanner inputint = new Scanner(System.in);
+
         int choice = 2;
         int n = 0;
+
         String[] nameList;
         nameList = new String[50];
         for(int i = 0; i < nameList.length; i++)
@@ -23,17 +25,20 @@ public class Main {
         {
             if(choice == 1)
             {
-                for(int i = 0; i < nameList.length; i++)
+                int x = 0;
+                while(x < numberList.length)
                 {
-                    int w = i+1;
-                    if(!nameList[i].equals("a"));
-                    System.out.println("Name " + w + ": " + nameList[i] + " ");
-                }
-                for(int d = 0; d < numberList.length; d++)
-                {
-                    int q = d+1;
-                    if(numberList[d] != 0)
-                        System.out.println("Lucky Number " + q + ": " + numberList[d] + " ");
+                    int w = x + 1;
+                    if(!nameList[x].equals("a"))
+                        {
+                            System.out.println("Name " + w + ": " + nameList[x] + " ");
+                        }
+                    if(numberList[x] != 0)
+                        {
+                            System.out.println("Lucky Number " + w + ": " + numberList[x] + " ");
+                            System.out.println("");
+                        }
+                    x++;
                 }
             }
 
@@ -42,16 +47,16 @@ public class Main {
                 System.out.println("What is your name?");
                 String name = input.nextLine();
 
-                Random thing = new Random(name);
-                int luckyNumber = thing.perfectRandom(2);
-                System.out.println(luckyNumber);
+                Random numberObject = new Random();
+                int luckyNumber = numberObject.perfectRandom(2);
+                System.out.println("Nice to meet you " + name + "!  Your lucky number is: " + luckyNumber);
 
                 nameList[n] = name;
                 numberList[n] = luckyNumber;
+                n++;
             }
 
-            n++;
-            System.out.println("Press 0 to exit, 1 for a listing of names with lucky numbers, and 2 to enter another name.");
+            System.out.println("Press 0 to exit, 1 for a listing of names with their respective lucky numbers, and 2 to enter another name.");
             choice = inputint.nextInt();
         }
 
